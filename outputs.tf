@@ -31,7 +31,7 @@ output "key_vault_uri" {
 }
 
 output "key_vault" {
- value = module.keyvaults.key_vault 
+  value = module.keyvaults.key_vault
 }
 
 # #############################################################################
