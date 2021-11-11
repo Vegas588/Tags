@@ -1,5 +1,7 @@
-resource_groups = {
-  resource_group_1 = {
+# A list of objects. The "name" will be used as the index.
+
+resource_groups = [
+  {
     name     = "Terraform1"
     location = "eastus2" //Azure Region to use
     tags = {
@@ -8,7 +10,7 @@ resource_groups = {
       env        = "dev"
     }
   },
-  resource_group_2 = {
+  {
     name     = "Terraform2"
     location = "eastus2" //Azure Region to use
     tags = {
@@ -17,4 +19,4 @@ resource_groups = {
       env        = "nprd"
     }
   }
-}
+]

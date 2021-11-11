@@ -16,6 +16,7 @@ output "resource_group_tags_map" {
   value = module.resourceGroup.resource_group_tags_map
 }
 
+/*
 # Added output from key vault module
 
 output "key_vault_id" {
@@ -41,4 +42,4 @@ output "key_vault" {
 # #############################################################################
 # # OUTPUTS Private DNS Zone
 # #############################################################################
-
+*/

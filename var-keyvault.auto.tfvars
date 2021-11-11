@@ -4,6 +4,7 @@ key_vaults = {
     location                        = "eastus2"
     resource_group_name             = "Terraform1"
     sku_name                        = "standard" # premium is other option
+    tenant_id                       = null
     enabled_for_deployment          = true
     enabled_for_disk_encryption     = true
     enabled_for_template_deployment = true

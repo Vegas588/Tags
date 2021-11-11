@@ -1,3 +1,4 @@
+/*
 # use name as index
 locals {
   rgs_map = {
@@ -16,6 +17,15 @@ locals {
 # - 
 resource "azurerm_resource_group" "this" {
   for_each = local.rgs_map # use local variable, other wise resource_group_1/resource_group_2 will be used in stead of Terraform1/Terraform2 as index
+  name     = each.value.name
+  location = each.value.location
+  tags     = each.value.tags
+}
+*/
+
+# Using list of objects with an index of the name of the resource group
+resource "azurerm_resource_group" "this" {
+  for_each = { for r in var.resource_groups : "${r.name}" => r } # name of RG is unique
   name     = each.value.name
   location = each.value.location
   tags     = each.value.tags
