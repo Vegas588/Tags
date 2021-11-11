@@ -97,7 +97,7 @@ resource "azurerm_virtual_network_peering" "source_to_destination" {
 resource "azurerm_virtual_network_peering" "destination_to_source" {
   for_each                     = var.vnet_peering
   name                         = "${each.value["destination_vnet_name"]}-to-${each.value["source_vnet_name"]}"
-  remote_virtual_network_id    = data.azurerm_resource_group.this[]
+  remote_virtual_network_id    = data.azurerm_virtual_network.this[??].id
   resource_group_name          = each.value["rg_name"]
   virtual_network_name         = each.value["source_vnet_name"]
   allow_forwarded_traffic      = coalesce(lookup(each.value, "allow_forwarded_traffic"), true) #attempting to solve for when people enter null
