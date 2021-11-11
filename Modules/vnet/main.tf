@@ -56,7 +56,7 @@ data "azurerm_virtual_network" "destination" {
   resource_group_name = each.value["destination_vnet_rg"]
   depends_on          = [azurerm_virtual_network.this]
 }
-
+# attempt to create a map of source_vnet_name to get the Id. Don't think this is working
 data "azurerm_virtual_network" "source" {
   for_each            = var.vnet_peering
   name                = each.value["source_vnet_name"]
